@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christy NG Bags – index</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --cream:#f5f0ea; --warm-white:#faf8f5; --dark:#1a1714; --brown:#6b5c4e; --tan:#b89c85; --gold:#c9a96e; --sidebar-w:180px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Jost',sans-serif; background:var(--warm-white); color:var(--dark); }
+
+    /* HEADER */
+    header { position:relative; width:100%; height:220px; overflow:hidden; }
+    header img.header-bg { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    header .header-overlay { position:absolute; inset:0; background:rgba(20,15,10,0.55); display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .brand-name { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; letter-spacing:0.25em; text-transform:uppercase; color:#f5f0ea; }
+    .brand-sub { font-size:0.72rem; letter-spacing:0.35em; color:var(--tan); margin-top:6px; text-transform:uppercase; }
+
+    /* MARQUEE */
+    marquee { background:var(--gold); color:var(--dark); font-size:0.72rem; letter-spacing:0.2em; padding:7px 0; font-weight:500; }
+
+    /* NAV */
+    nav { background:var(--cream); border-bottom:1px solid #ddd6cc; text-align:center; padding:12px 0; }
+    nav a { font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--dark); text-decoration:none; margin:0 18px; padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+    /* LAYOUT */
+    .page-body { display:grid; grid-template-columns:var(--sidebar-w) 1fr var(--sidebar-w); min-height:calc(100vh - 280px); }
+    aside { background:#ede8e1; padding:28px 16px; font-size:0.78rem; }
+    aside h3 { font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; color:var(--brown); }
+    aside ul { list-style:none; }
+    aside ul li { padding:5px 0; border-bottom:1px solid #d8d0c6; }
+    aside .info-block { margin-top:24px; }
+    aside .info-block p { line-height:1.7; color:#5a5048; margin-bottom:6px; }
+    aside .hours-item { font-size:0.73rem; padding:3px 0; color:#5a5048; }
+    main { background:var(--warm-white); padding:40px 48px; }
+
+    /* HOME CONTENT */
+    .welcome-heading { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; font-style:italic; color:var(--brown); margin-bottom:22px; text-align:center; }
+    .owner-photo { display:block; width:100%; height:620px; object-fit:cover; object-position:center; margin-bottom:22px; }
+    .owner-photo-placeholder { width:100%; height:620px; background:linear-gradient(135deg,#e8ddd4,#c9b99e); display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:22px; color:var(--tan); font-size:0.85rem; text-align:center; gap:10px; }
+    .owner-photo-placeholder span { font-size:3rem; }
+    .tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--brown); text-align:center; margin:18px 0 22px; padding:12px 0; border-top:1px solid #ddd4c8; border-bottom:1px solid #ddd4c8; }
+    .about-text { font-size:0.88rem; line-height:1.85; color:#5a5048; margin-bottom:28px; }
+    .cta-btn { display:block; width:fit-content; margin:0 auto; background:var(--dark); color:var(--cream); font-family:'Jost',sans-serif; font-size:0.76rem; letter-spacing:0.2em; text-transform:uppercase; padding:13px 32px; text-decoration:none; transition:background 0.3s; }
+    .cta-btn:hover { background:var(--gold); color:var(--dark); }
+
+    /* PROMO & TESTI */
+    .promo-box { background:var(--gold); color:var(--dark); padding:14px 12px; text-align:center; margin-bottom:18px; font-size:0.78rem; }
+    .promo-box .promo-title { font-weight:500; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:5px; }
+    .promo-box .promo-code { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; }
+    .testimonial { background:white; border-left:3px solid var(--tan); padding:10px 12px; margin-bottom:12px; font-size:0.75rem; line-height:1.6; color:#5a5048; font-style:italic; }
+    .testimonial .testi-name { font-style:normal; font-weight:500; color:var(--brown); margin-top:5px; font-size:0.72rem; }
+
+    /* FOOTER */
+    footer { background:var(--dark); color:#9e8e7e; text-align:center; padding:18px; font-size:0.75rem; letter-spacing:0.12em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="header-bg" src="hero.jpg" alt="Christy NG Bags"
+    onerror="this.style.display='none'; this.parentElement.querySelector('.header-overlay').style.background='rgba(58,46,37,0.92)'" />
+  <div class="header-overlay">
+    <div class="brand-name">Christy NG Bags</div>
+    <div class="brand-sub">Sustainable Luxury · Vegan Leather Collections</div>
+  </div>
+</header>
+
+<marquee behavior="scroll" direction="left" scrollamount="4">
+  ✦ FREE ONGKIR se-Jakarta &nbsp;&nbsp;&nbsp; ✦ DISKON 12% Pembelian di jam pertama – Kode: christy12 &nbsp;&nbsp;&nbsp; ✦ Vegan Leather, Ramah Lingkungan &nbsp;&nbsp;&nbsp;
+</marquee>
+
+<nav>
+  <a href="index.html" class="active">Index</a>
+  <a href="produk.html">Produk</a>
+  <a href="detailproduk.html">DetailProduk</a>
+  <a href="transaksi.html">Transaksi</a>
+  <a href="invoice.html">Invoice</a>
+  <a href="tentang.html">Tentang</a>
+  <a href="kontak.html">Kontak & Biodata</a>
+</nav>
+
+<div class="page-body">
+
+  <!-- LEFT SIDEBAR -->
+  <aside>
+    <h3>Kategori</h3>
+    <ul>
+      <li>• Tote Bag</li>
+      <li>• Handbag</li>
+      <li>• Bucket Bag</li>
+      <li>• Shoulder Bag</li>
+      <li>• Crossbody Bag</li>
+    </ul>
+    <div class="info-block">
+      <h3>Tentang Toko</h3>
+      <p>Christy NG adalah jenama fashion yang berdiri pada tahun 2012, menghadirkan koleksi tas stylish, nyaman, dan berkualitas.</p>
+    </div>
+    <div class="info-block">
+      <h3>Jam Operasional</h3>
+      <div class="hours-item">Senin – Minggu</div>
+      <div class="hours-item">10.00 – 22.00 WIB</div>
+    </div>
+    <div class="info-block">
+      <h3>Temui Kami</h3>
+      <p>Instagram: @christyngbags</p>
+      <p>WhatsApp: 082343488102</p>
+      <p>Shopee: christyngofficial</p>
+    </div>
+    <div class="info-block">
+      <h3>Lokasi</h3>
+      <p>Puri Indah Mall 1, GF Unit 84, Jakarta Barat</p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1 class="welcome-heading">Selamat Datang di Christy NG Bags 👜</h1>
+
+    <!-- Foto Christy NG -->
+    <img class="owner-photo" src="christyng.jpeg" alt="Foto Christy NG Bags"
+      onerror="this.outerHTML='<div class=\'owner-photo-placeholder\'><span>🖼️</span>Ruang Foto Christy NG Bags</div>'" />
+
+    <p class="tagline">
+      "Pilihan Tepat untuk Tampil Elegan, Modern, dan Percaya Diri Setiap Hari!"
+    </p>
+
+    <p class="about-text">
+      Dengan desain yang mengikuti tren terkini dan material pilihan yang nyaman digunakan, kami berkomitmen menghadirkan produk terbaik dengan harga terjangkau untuk mendukung penampilan Anda dalam setiap aktivitas.
+      Kami berfokus pada produk <strong>berkelanjutan dan etis</strong>, dengan menawarkan berbagai koleksi berbahan vegan leather bertekstur saffiano, nilon, dan kanvas anti air. Desain kami mengusung gaya modern, elegan, namun tetap ramah di kantong — cocok untuk berbagai kalangan wanita Asia modern.
+    </p>
+
+    <a href="produk.html" class="cta-btn">✦ Lihat Katalog Tas Kami</a>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside>
+    <h3>Mengapa Kami?</h3>
+    <ul>
+      <li>• Vegan leather premium</li>
+      <li>• Desain selalu update</li>
+      <li>• Harga bersahabat</li>
+      <li>• Ramah lingkungan</li>
+      <li>• Siap kirim ke seluruh Indonesia</li>
+    </ul>
+    <div class="info-block">
+      <h3>Promo Spesial</h3>
+      <div class="promo-box">
+        <div class="promo-title">🔥 Diskon 12%</div>
+        <div style="font-size:0.72rem;margin-bottom:5px;">Khusus pembelian di jam pertama!</div>
+        <div class="promo-code">Kode: christy12</div>
+      </div>
+      
+    </div>
+    <h3>Testimoni</h3>
+    <div class="testimonial">
+      "Tas Christy NG kualitasnya luar biasa, bahan vegan leather-nya terasa premium banget!"
+      <div class="testi-name">— Rina</div>
+    </div>
+    <div class="testimonial">
+      "Desainnya elegan, pengirimannya cepat. Worth it banget!"
+      <div class="testi-name">— Keisha</div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  &copy; 2026 Christy NG Bags. All Rights Reserved. &nbsp;|&nbsp; Puri Indah Mall 1, Jakarta Barat
+</footer>
+
+</body>
+</html>

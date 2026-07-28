@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christy NG Bags – Transaksi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --cream:#f5f0ea; --warm-white:#faf8f5; --dark:#1a1714; --brown:#6b5c4e; --tan:#b89c85; --gold:#c9a96e; --sidebar-w:180px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Jost',sans-serif; background:var(--warm-white); color:var(--dark); }
+    header { position:relative; width:100%; height:220px; overflow:hidden; }
+    header img.header-bg { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    header .header-overlay { position:absolute; inset:0; background:rgba(20,15,10,0.55); display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .brand-name { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; letter-spacing:0.25em; text-transform:uppercase; color:#f5f0ea; }
+    .brand-sub { font-size:0.72rem; letter-spacing:0.35em; color:var(--tan); margin-top:6px; text-transform:uppercase; }
+    marquee { background:var(--gold); color:var(--dark); font-size:0.72rem; letter-spacing:0.2em; padding:7px 0; font-weight:500; }
+    nav { background:var(--cream); border-bottom:1px solid #ddd6cc; text-align:center; padding:12px 0; }
+    nav a { font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--dark); text-decoration:none; margin:0 18px; padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { color:var(--gold); border-bottom-color:var(--gold); }
+    .page-body { display:grid; grid-template-columns:var(--sidebar-w) 1fr var(--sidebar-w); min-height:calc(100vh - 280px); }
+    aside { background:#ede8e1; padding:28px 16px; font-size:0.78rem; }
+    aside h3 { font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; color:var(--brown); }
+    aside ul { list-style:none; }
+    aside ul li { padding:5px 0; border-bottom:1px solid #d8d0c6; }
+    aside .info-block { margin-top:24px; }
+    aside .info-block p { line-height:1.7; color:#5a5048; margin-bottom:6px; }
+    aside .hours-item { font-size:0.73rem; padding:3px 0; color:#5a5048; }
+    main { background:var(--warm-white); padding:40px 48px; }
+    .promo-box { background:var(--gold); color:var(--dark); padding:14px 12px; text-align:center; margin-bottom:18px; font-size:0.78rem; }
+    .promo-box .promo-title { font-weight:500; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:5px; }
+    .promo-box .promo-code { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; }
+    .testimonial { background:white; border-left:3px solid var(--tan); padding:10px 12px; margin-bottom:12px; font-size:0.75rem; line-height:1.6; color:#5a5048; font-style:italic; }
+    .testimonial .testi-name { font-style:normal; font-weight:500; color:var(--brown); margin-top:5px; font-size:0.72rem; }
+    footer { background:var(--dark); color:#9e8e7e; text-align:center; padding:18px; font-size:0.75rem; letter-spacing:0.12em; }
+
+    /* TRANSAKSI */
+    .transaksi-wrapper { max-width:680px; margin:0 auto; }
+    .transaksi-title { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:400; font-style:italic; color:var(--brown); text-align:center; margin-bottom:4px; }
+    .transaksi-subtitle { font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:var(--tan); text-align:center; letter-spacing:0.15em; margin-bottom:28px; }
+    .form-table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+    .form-table thead tr { background:var(--brown); color:var(--cream); }
+    .form-table thead th { padding:12px 16px; text-align:center; font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; }
+    .form-table tbody tr { border-bottom:1px solid #e8e0d6; }
+    .form-table tbody tr:nth-child(odd) { background:#f5f0ea; }
+    .form-table tbody tr:nth-child(even) { background:#faf8f5; }
+    .form-table tbody td { padding:11px 16px; vertical-align:middle; color:#5a5048; }
+    .form-table tbody td:first-child { font-weight:500; color:var(--brown); white-space:nowrap; width:38%; }
+    .form-table input[type="text"], .form-table input[type="number"], .form-table select, .form-table textarea { width:100%; padding:8px 12px; border:1px solid #d8d0c6; background:white; font-family:'Jost',sans-serif; font-size:0.83rem; color:var(--dark); outline:none; transition:border-color 0.2s; }
+    .form-table input[type="text"]:focus, .form-table input[type="number"]:focus, .form-table select:focus, .form-table textarea:focus { border-color:var(--gold); }
+    .form-table textarea { resize:vertical; min-height:80px; }
+    .radio-group { display:flex; gap:20px; align-items:center; }
+    .radio-group label { display:flex; align-items:center; gap:6px; cursor:pointer; font-size:0.83rem; color:#5a5048; }
+    .form-table input[type="radio"] { accent-color:var(--gold); width:14px; height:14px; }
+    .form-actions { display:flex; justify-content:center; gap:14px; margin-top:24px; }
+    .btn-kirim { background:var(--dark); color:var(--cream); font-family:'Jost',sans-serif; font-size:0.76rem; letter-spacing:0.2em; text-transform:uppercase; padding:12px 32px; border:none; cursor:pointer; transition:background 0.3s; }
+    .btn-kirim:hover { background:var(--gold); color:var(--dark); }
+    .btn-reset { background:#e8e0d6; color:var(--brown); font-family:'Jost',sans-serif; font-size:0.76rem; letter-spacing:0.2em; text-transform:uppercase; padding:12px 28px; border:1px solid #d8d0c6; cursor:pointer; transition:background 0.3s; }
+    .btn-reset:hover { background:#d8d0c6; }
+    .success-msg { display:none; background:#e8f5e9; border:1px solid #a5d6a7; color:#2e7d32; padding:14px 20px; text-align:center; margin-top:20px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; }
+
+    /* VALIDASI ERROR */
+    .form-table input.field-error, .form-table select.field-error, .form-table textarea.field-error { border-color:#c0483a; background:#fdf1ef; }
+    .error-text { display:none; color:#c0483a; font-size:0.72rem; margin-top:5px; }
+    .error-text.show { display:block; }
+
+    /* RINGKASAN PESANAN (LIVE) */
+    .order-preview { border:1px solid #e3dccf; background:#fffdfb; margin-top:24px; padding:18px 20px; }
+    .order-preview h3 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; letter-spacing:0.05em; color:var(--brown); margin-bottom:12px; text-align:center; }
+    .order-preview .op-row { display:flex; justify-content:space-between; font-size:0.83rem; color:#5a5048; padding:5px 0; }
+    .order-preview .op-row.op-discount { color:#3c7a4c; }
+    .order-preview .op-row.op-total { border-top:2px solid var(--gold); margin-top:6px; padding-top:10px; font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--dark); font-weight:600; }
+    .order-preview .op-empty { text-align:center; color:var(--tan); font-size:0.8rem; font-style:italic; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="header-bg" src="hero.jpg" alt="Christy NG Bags"
+    onerror="this.style.display='none'; this.parentElement.querySelector('.header-overlay').style.background='rgba(58,46,37,0.92)'" />
+  <div class="header-overlay">
+    <div class="brand-name">Christy NG Bags</div>
+    <div class="brand-sub">Sustainable Luxury · Vegan Leather Collections</div>
+  </div>
+</header>
+
+<marquee behavior="scroll" direction="left" scrollamount="4">
+  ✦ FREE ONGKIR se-Jakarta &nbsp;&nbsp;&nbsp; ✦ DISKON 12% Jam Pertama – Kode: christy12 &nbsp;&nbsp;&nbsp; ✦ Vegan Leather, Ramah Lingkungan &nbsp;&nbsp;&nbsp;
+</marquee>
+
+<nav>
+  <a href="index.html">Index</a>
+  <a href="produk.html">Produk</a>
+  <a href="detailproduk.html">DetailProduk</a>
+  <a href="transaksi.html" class="active">Transaksi</a>
+  <a href="invoice.html">Invoice</a>
+  <a href="tentang.html">Tentang</a>
+  <a href="kontak.html">Kontak & Biodata</a>
+</nav>
+
+<div class="page-body">
+
+  <aside>
+    <h3>Kategori</h3>
+    <ul>
+      <li>• Tote Bag</li>
+      <li>• Handbag</li>
+      <li>• Bucket Bag</li>
+      <li>• Shoulder Bag</li>
+      <li>• Crossbody Bag</li>
+    </ul>
+    <div class="info-block">
+      <h3>Pembayaran</h3>
+      <p>Transfer BCA<br>1234567890<br>a/n Christy NG</p>
+      <p style="margin-top:10px;">QRIS tersedia di toko.</p>
+    </div>
+    <div class="info-block">
+      <h3>Jam Operasional</h3>
+      <div class="hours-item">Senin – Minggu</div>
+      <div class="hours-item">10.00 – 22.00 WIB</div>
+    </div>
+    <div class="info-block">
+      <h3>Bantuan</h3>
+      <p>WhatsApp: 082343488102</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="transaksi-wrapper">
+      <h1 class="transaksi-title">Form Transaksi</h1>
+      <p class="transaksi-subtitle">— Data Pemesanan —</p>
+
+      <table class="form-table">
+        <thead>
+          <tr><th colspan="2">DATA PEMESANAN</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nama Pembeli</td>
+            <td>
+              <input type="text" id="nama" placeholder="Masukkan nama lengkap" />
+              <div class="error-text" id="errNama">Nama wajib diisi.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>No. Pembeli</td>
+            <td>
+              <input type="text" id="nohp" placeholder="Contoh: 08xxxxxxxxxx" />
+              <div class="error-text" id="errNohp">Nomor HP wajib diisi.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Pilih Produk</td>
+            <td>
+              <select id="produk">
+                <option value="">-- Pilih Produk --</option>
+                <option value="Marisol Large Tote Bag – Rp 999.000">Marisol Large Tote Bag – Rp 999.000</option>
+                <option value="Carson Tote Bag – Rp 849.000">Carson Tote Bag – Rp 849.000</option>
+                <option value="Russo Large Tote Bag (Valentine's) – Rp 1.049.000">Russo Large Tote Bag (Valentine's) – Rp 1.049.000</option>
+                <option value="Enzo Large Duffle Bag (Valentine's) – Rp 1.299.000">Enzo Large Duffle Bag (Valentine's) – Rp 1.299.000</option>
+                <option value="Malia Bucket Bag – Rp 949.000">Malia Bucket Bag – Rp 949.000</option>
+                <option value="Giorgio Mini Bucket Bag – Rp 949.000">Giorgio Mini Bucket Bag – Rp 949.000</option>
+                <option value="Beth Mini Handbag – Rp 899.000">Beth Mini Handbag – Rp 899.000</option>
+                <option value="Gavin Tote Bag – Rp 1.199.000">Gavin Tote Bag – Rp 1.199.000</option>
+                <option value="Leith Shoulder Bag – Rp 1.049.000">Leith Shoulder Bag – Rp 1.049.000</option>
+              </select>
+              <div class="error-text" id="errProduk">Silakan pilih salah satu produk.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Jumlah Pembelian</td>
+            <td>
+              <input type="number" id="jumlah" placeholder="Masukkan jumlah" min="1" />
+              <div class="error-text" id="errJumlah">Jumlah minimal 1.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Kode Diskon</td>
+            <td><input type="text" id="diskon" placeholder="Contoh: christy12" /></td>
+          </tr>
+          <tr>
+            <td>Metode Pembayaran</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="bayar" value="Transfer" /> Transfer</label>
+                <label><input type="radio" name="bayar" value="QRIS" /> QRIS</label>
+              </div>
+              <div class="error-text" id="errBayar">Pilih metode pembayaran.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Alamat Pengiriman</td>
+            <td>
+              <textarea id="alamat" placeholder="Masukkan alamat lengkap pengiriman"></textarea>
+              <div class="error-text" id="errAlamat">Alamat pengiriman wajib diisi.</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="order-preview" id="orderPreview">
+        <h3>Ringkasan Pesanan</h3>
+        <p class="op-empty" id="opEmpty">Pilih produk & jumlah untuk melihat estimasi total.</p>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-kirim" onclick="kirimPesanan()">✦ Kirim Pesanan</button>
+        <button class="btn-reset" onclick="resetForm()">↺ Reset</button>
+      </div>
+
+      <div class="success-msg" id="successMsg">
+        ✦ Pesanan Anda telah berhasil dikirim! Mengalihkan ke invoice... ✦
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <h3>Mengapa Kami?</h3>
+    <ul>
+      <li>• Vegan leather premium</li>
+      <li>• Desain selalu update</li>
+      <li>• Harga bersahabat</li>
+      <li>• Ramah lingkungan</li>
+      <li>• Siap kirim ke seluruh Indonesia</li>
+    </ul>
+    <div class="info-block">
+      <h3>Promo Spesial</h3>
+      <div class="promo-box">
+        <div class="promo-title">🔥 Diskon 12%</div>
+        <div style="font-size:0.72rem;margin-bottom:5px;">Khusus pembelian di jam pertama!</div>
+        <div class="promo-code">Kode: christy12</div>
+      </div>
+    </div>
+    <h3>Testimoni</h3>
+    <div class="testimonial">
+      "Tas Christy NG kualitasnya luar biasa!"
+      <div class="testi-name">—Rina</div>
+    </div>
+    <div class="testimonial">
+      "Pengirimannya cepat. Worth it banget!"
+      <div class="testi-name">—Keisha</div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  &copy; 2026 Christy NG Bags. All Rights Reserved. &nbsp;|&nbsp; Puri Indah Mall 1, Jakarta Barat
+</footer>
+
+<script>
+  var fieldIds = ['nama', 'nohp', 'produk', 'jumlah', 'alamat'];
+
+  function formatRupiahTx(angka) {
+    return 'Rp ' + Math.round(angka).toLocaleString('id-ID');
+  }
+
+  function setError(id, errId, isError) {
+    var field = document.getElementById(id);
+    var err = document.getElementById(errId);
+    if (isError) {
+      field.classList.add('field-error');
+      err.classList.add('show');
+    } else {
+      field.classList.remove('field-error');
+      err.classList.remove('show');
+    }
+  }
+
+  // Perbarui ringkasan pesanan setiap kali produk/jumlah/diskon berubah
+  function updatePreview() {
+    var produk = document.getElementById('produk').value;
+    var jumlah = parseInt(document.getElementById('jumlah').value, 10);
+    var diskon = document.getElementById('diskon').value.trim();
+    var preview = document.getElementById('orderPreview');
+
+    if (!produk || !jumlah || jumlah < 1) {
+      preview.innerHTML = '<h3>Ringkasan Pesanan</h3><p class="op-empty" id="opEmpty">Pilih produk & jumlah untuk melihat estimasi total.</p>';
+      return;
+    }
+
+    var parts = produk.split('–');
+    var namaProduk = parts[0].trim();
+    var hargaSatuan = parseInt((parts[1] || '0').replace(/[^0-9]/g, ''), 10) || 0;
+    var subtotal = hargaSatuan * jumlah;
+    var kodeValid = diskon.toLowerCase() === 'christy12';
+    var nilaiDiskon = kodeValid ? subtotal * 0.12 : 0;
+    var total = subtotal - nilaiDiskon;
+
+    var html = '<h3>Ringkasan Pesanan</h3>';
+    html += '<div class="op-row"><span>' + namaProduk + ' × ' + jumlah + '</span><span>' + formatRupiahTx(subtotal) + '</span></div>';
+    if (diskon) {
+      if (kodeValid) {
+        html += '<div class="op-row op-discount"><span>Diskon (christy12, 12%)</span><span>- ' + formatRupiahTx(nilaiDiskon) + '</span></div>';
+      } else {
+        html += '<div class="op-row" style="color:#c0483a;"><span>Kode diskon tidak valid</span><span>Rp 0</span></div>';
+      }
+    }
+    html += '<div class="op-row"><span>Ongkos Kirim</span><span>Rp 0 (Free Ongkir)</span></div>';
+    html += '<div class="op-row op-total"><span>Total Estimasi</span><span>' + formatRupiahTx(total) + '</span></div>';
+
+    preview.innerHTML = html;
+  }
+
+  ['produk', 'jumlah', 'diskon'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', updatePreview);
+    document.getElementById(id).addEventListener('change', updatePreview);
+  });
+
+  // Hilangkan tanda error saat user mulai mengisi ulang
+  fieldIds.forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      this.classList.remove('field-error');
+    });
+    document.getElementById(id).addEventListener('change', function () {
+      this.classList.remove('field-error');
+    });
+  });
+
+  function kirimPesanan() {
+    var nama = document.getElementById('nama').value.trim();
+    var nohp = document.getElementById('nohp').value.trim();
+    var produkSelect = document.getElementById('produk');
+    var produk = produkSelect.value;
+    var jumlahRaw = document.getElementById('jumlah').value;
+    var jumlah = parseInt(jumlahRaw, 10);
+    var diskon = document.getElementById('diskon').value.trim();
+    var bayar = document.querySelector('input[name="bayar"]:checked');
+    var alamat = document.getElementById('alamat').value.trim();
+
+    var valid = true;
+    setError('nama', 'errNama', !nama); if (!nama) valid = false;
+    setError('nohp', 'errNohp', !nohp); if (!nohp) valid = false;
+    setError('produk', 'errProduk', !produk); if (!produk) valid = false;
+    setError('jumlah', 'errJumlah', !jumlahRaw || jumlah < 1); if (!jumlahRaw || jumlah < 1) valid = false;
+    document.getElementById('errBayar').classList.toggle('show', !bayar);
+    if (!bayar) valid = false;
+    setError('alamat', 'errAlamat', !alamat); if (!alamat) valid = false;
+
+    if (!valid) {
+      document.getElementById('successMsg').style.display = 'none';
+      var firstInvalid = document.querySelector('.field-error');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    // Pisahkan nama produk & harga satuan dari value option ("Nama Produk – Rp 999.000")
+    var parts = produk.split('–');
+    var namaProduk = parts[0].trim();
+    var hargaText = parts.length > 1 ? parts[1].trim() : 'Rp 0';
+    var hargaSatuan = parseInt(hargaText.replace(/[^0-9]/g, ''), 10) || 0;
+
+    var order = {
+      nama: nama,
+      nohp: nohp,
+      namaProduk: namaProduk,
+      hargaSatuan: hargaSatuan,
+      jumlah: jumlah,
+      diskon: diskon,
+      bayar: bayar.value,
+      alamat: alamat,
+      tanggal: new Date().toISOString()
+    };
+
+    localStorage.setItem('cng_order', JSON.stringify(order));
+
+    document.getElementById('successMsg').style.display = 'block';
+    setTimeout(function () {
+      window.location.href = 'invoice.html';
+    }, 900);
+  }
+
+  function resetForm() {
+    document.getElementById('nama').value = '';
+    document.getElementById('nohp').value = '';
+    document.getElementById('produk').value = '';
+    document.getElementById('jumlah').value = '';
+    document.getElementById('diskon').value = '';
+    document.querySelectorAll('input[name="bayar"]').forEach(function (r) { r.checked = false; });
+    document.getElementById('alamat').value = '';
+    document.getElementById('successMsg').style.display = 'none';
+
+    fieldIds.forEach(function (id) { document.getElementById(id).classList.remove('field-error'); });
+    document.querySelectorAll('.error-text').forEach(function (e) { e.classList.remove('show'); });
+    updatePreview();
+  }
+</script>
+
+</body>
+</html>
